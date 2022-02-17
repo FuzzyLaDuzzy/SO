@@ -19,7 +19,9 @@ int main (int argc, char * argv[]){
     char buffer [MAX_BUF];
 
 
-    if ((fd_origem = open (argv[1], O_RDONLY))= -1)
+    int fd_origem,fd_destino;
+
+    if (fd_origem = open (argv[1], O_RDONLY)== -1)
     {
         printf("Msg: %s, Nr: %d\n", strerror(errno),errno);
         perror("erro no open origem");
@@ -34,7 +36,7 @@ int main (int argc, char * argv[]){
 
     int bytes_read;
 
-    while((bytes_read = read(fd_origem, buffer, MAX_BUF)) = 0){ // temos de adicionar o MAX BUF para o buffer nao ler menos do que este / evite escrever lixo a seguir...
+    while((bytes_read = read(fd_origem, buffer, MAX_BUF)) == 0){ // temos de adicionar o MAX BUF para o buffer nao ler menos do que este / evite escrever lixo a seguir...
         write(fd_destino, buffer, bytes_read);
     }
 
