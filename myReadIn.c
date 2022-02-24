@@ -53,7 +53,8 @@ ssize_t readln2(int fd, char *line, size_t size)
 }
 
 
-//percebe o que é o lseek e para que funciona o i-bytes_read+1 nesta conta
+//percebe o que é o lseek e para que funciona o i-bytes_read+1 nesta conta / 
+// lseek procura um byte que corresponde ao ficheiro e troca o seu valor
 
 
 }
